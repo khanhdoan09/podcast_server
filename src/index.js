@@ -14,9 +14,9 @@ app.listen(process.env.PORT || 3000, () => {
   console.log(`Server Started at ${3000}`);
 });
 
-app.use("/api", podcastRouter);
 app.use("/api", channelRouter);
+app.use("/api", podcastRouter);
 
 app.get("/", (req, res, next) => {
-  res.status(200).json({ success: "Hello Test Server" });
+  res.status(200).json({ success: "Test Server" });
 });

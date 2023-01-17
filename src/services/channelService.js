@@ -1,5 +1,9 @@
 const Channel = require("../models/channel");
 
+const testHosting = (req, res) => {
+  res.status(200).json("response successfully");
+};
+
 const getAllChannel = async (req, res) => {
   try {
     const data = await Channel.find({});
@@ -17,7 +21,8 @@ const getAllChannel = async (req, res) => {
 const getAllChannelByName = async (req, res) => {
   const name = req?.query?.name;
   try {
-    if (name === undefined || name === null)  throw Error("not found name to search");
+    if (name === undefined || name === null)
+      throw Error("not found name to search");
     const data = await Channel.find({ title: { $regex: name, $options: "i" } });
     if (data) {
       res.status(200).json(data);
@@ -31,6 +36,7 @@ const getAllChannelByName = async (req, res) => {
 };
 
 module.exports = {
+  testHosting,
   getAllChannel,
   getAllChannelByName,
 };
