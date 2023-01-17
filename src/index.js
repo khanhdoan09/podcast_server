@@ -18,5 +18,5 @@ app.use("/api", podcastRouter);
 app.use("/api", channelRouter);
 
 app.get("/", (req, res, next) => {
-  res.status(200).json({ success: "Hello Server" });
+  res.status(200).json({ success: "Hello Test Server" });
 });
