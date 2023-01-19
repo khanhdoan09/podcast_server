@@ -9,6 +9,8 @@ const ChannelSchema = new Schema({
   description: { type: String, required: true },
   time: { type: String, required: true },
   podcasts: [{ type: Schema.Types.ObjectId, ref: "podcasts" }],
+  categories: [{ type: Schema.Types.ObjectId, ref: "categories" }],
+
 });
 
 module.exports = mongoose.model("channels", ChannelSchema);
